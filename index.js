@@ -7,6 +7,8 @@ const setAlarmButton = document.querySelector("#submitButton");
 const alarmContainer = document.querySelector("#alarms-container");
 
 
+
+// Adding Hours,Minute, Second , DropDown 
 window.addEventListener("DOMContentLoaded", (event) => {
   
   dropDownMenu(1, 12, setHours);
@@ -19,6 +21,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   fetchAlarm();
 });
 
+
+// Event Listener added to Set Alarm 
 
 
 setAlarmButton.addEventListener("click", getInput);
@@ -68,6 +72,7 @@ function getInput(e) {
   setAlarm(alarmTime);
 }
 
+// Converting time to 24 hour
 
 function convertToTime(hour, minute, second, amPm) {
   return `${parseInt(hour)}:${minute}:${second} ${amPm}`;
@@ -90,7 +95,7 @@ function setAlarm(time, fetching = false) {
   }
 }
 
-
+// Alarms set in HTML
 function addAlaramToDom(time, intervalId) {
   const alarm = document.createElement("div");
   alarm.classList.add("alarm", "mb", "d-flex");
@@ -105,7 +110,7 @@ function addAlaramToDom(time, intervalId) {
 }
 
 
-
+// Is alarms saved in Local Storage?
 function checkAlarams() {
 
   let alarms = [];
@@ -115,6 +120,7 @@ function checkAlarams() {
   return alarms;
 }
 
+// save alarm to local storage
 
 function saveAlarm(time) {
 
@@ -124,7 +130,7 @@ function saveAlarm(time) {
   localStorage.setItem("alarms", JSON.stringify(alarms));
 }
 
-
+//  alarms from local storage
 function fetchAlarm() {
   const alarms = checkAlarams();
 
