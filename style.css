@@ -1,4 +1,4 @@
-/*  GLobal Styles */
+/*  GLobal Css */
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +41,7 @@ select {
   margin-bottom: 1rem;
 }
  
-/* End GLobal Styles */
+/* End GLobal Css */
 
 .main-container {
   min-height: 100vh;
@@ -119,6 +119,8 @@ select {
   color: black;
 }
 
+
+/* style  of screen size less than 768px */
 
 @media only screen and (min-width: 600px) {
   
